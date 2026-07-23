@@ -1,370 +1,466 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slice & Spice | Premium Pizza, Smoky Jollof & Drinks</title>
-    <!-- Tailwind CSS for modern styling -->
+    <title>XTONAFAN KLODIN | Luxury Apparel Studio</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        vibrant: {
+                            dark: '#0f172a',
+                            pink: '#f43f5e',
+                            purple: '#8b5cf6',
+                            cyan: '#06b6d4',
+                            light: '#f8fafc',
+                            card: '#ffffff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        .hero-slide {
-            opacity: 0;
-            transition: opacity 1.2s ease-in-out;
-            position: absolute;
-            inset: 0;
-        }
-        .hero-slide.active {
-            opacity: 1;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
+        .gradient-text {
+            background: linear-gradient(135deg, #f43f5e, #8b5cf6, #06b6d4);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-red-600 selection:text-white">
+<body class="bg-vibrant-light text-slate-800 font-sans antialiased">
 
-    <!-- NAVIGATION BAR -->
-    <nav class="bg-white/90 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 border-b border-slate-100 transition-all">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-md shadow-red-200">
-                        <i class="fa-solid fa-fire-flame-curved"></i>
-                    </div>
-                    <a href="#home" class="text-xl sm:text-2xl font-black tracking-tight text-slate-900">SLICE <span class="text-red-600">&</span> SPICE</a>
-                </div>
-
-                <!-- Navigation Links -->
-                <div class="hidden md:flex space-x-6 items-center font-semibold text-sm text-slate-600">
-                    <a href="#home" class="hover:text-red-600 transition">Home</a>
-                    <a href="#menu" class="hover:text-red-600 transition">Menu</a>
-                    <a href="#about" class="hover:text-red-600 transition">About</a>
-                    
-                    <!-- Our Team Dropdown -->
-                    <div class="relative group py-4">
-                        <button onclick="toggleTeamDropdown(event)" class="hover:text-red-600 transition flex items-center space-x-1 focus:outline-none">
-                            <span>Our Team</span>
-                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                        </button>
-                        <div id="team-dropdown" class="hidden absolute top-full left-0 w-48 bg-white rounded-2xl shadow-xl border border-slate-100 py-3 space-y-1 z-50">
-                            <a href="#chief-chef-section" onclick="showChiefChefSection()" class="block px-4 py-2 text-slate-700 hover:bg-red-50 hover:text-red-600 transition font-semibold">Chief Chef</a>
-                            <a href="#our-staff-section" onclick="showStaffSection()" class="block px-4 py-2 text-slate-700 hover:bg-red-50 hover:text-red-600 transition font-semibold">Our Staff</a>
-                        </div>
-                    </div>
-
-                    <a href="#hours" class="hover:text-red-600 transition">Hours</a>
-                    <a href="#location" class="hover:text-red-600 transition flex items-center space-x-1.5"><i class="fa-solid fa-location-dot text-red-600"></i><span>Location</span></a>
-                    <a href="#contact" class="hover:text-red-600 transition">Contact</a>
-                    <a href="#booking" class="hover:text-red-600 transition">Book Appointment</a>
-                </div>
-
-                <!-- Right Side: Cart Logo & Mobile Menu Button -->
-                <div class="flex items-center space-x-4">
-                    <!-- Cart Button -->
-                    <button onclick="toggleCart()" class="relative bg-slate-100 hover:bg-slate-200 text-slate-700 w-12 h-12 rounded-2xl flex items-center justify-center transition focus:outline-none">
-                        <i class="fa-solid fa-cart-shopping text-lg"></i>
-                        <span id="cart-count" class="absolute -top-1.5 -right-1.5 bg-red-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shadow-md shadow-red-200">0</span>
-                    </button>
-
-                    <!-- Mobile Menu Button -->
-                    <div class="md:hidden flex items-center">
-                        <button onclick="toggleMobileMenu()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 w-12 h-12 rounded-2xl flex items-center justify-center transition focus:outline-none">
-                            <i class="fa-solid fa-bars text-lg"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-rose-500 via-purple-600 to-cyan-500 text-white text-xs py-2.5 px-4 flex justify-between items-center tracking-wider font-medium">
+        <div class="hidden sm:block">✨ Exclusive XTONAFAN KLODIN Private Fittings | Liberia Camp GPRTU, Effutu, Central Region</div>
+        <div class="flex items-center gap-3 mx-auto sm:mx-0">
+            <span>CURRENCY:</span>
+            <select id="currencySelector" class="bg-black/20 backdrop-blur-sm text-white px-2 py-0.5 rounded border border-white/20 focus:outline-none cursor-pointer font-semibold">
+                <option value="GHS" selected class="bg-slate-900 text-white">GHS (₵)</option>
+                <option value="USD" class="bg-slate-900 text-white">USD ($)</option>
+                <option value="EUR" class="bg-slate-900 text-white">EUR (€)</option>
+                <option value="GBP" class="bg-slate-900 text-white">GBP (£)</option>
+            </select>
         </div>
+    </div>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-4 shadow-lg">
-            <a href="#home" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-red-600 font-semibold">Home</a>
-            <a href="#menu" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-red-600 font-semibold">Menu</a>
-            <a href="#about" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-red-600 font-semibold">About</a>
-            <div>
-                <button onclick="toggleMobileTeamDropdown()" class="w-full flex justify-between items-center text-slate-700 hover:text-red-600 font-semibold py-1">
-                    <span>Our Team</span>
-                    <i class="fa-solid fa-chevron-down text-xs"></i>
+    <!-- Main Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menuBtn" class="lg:hidden text-slate-800 focus:outline-none p-2 rounded-lg hover:bg-slate-100" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Brand Logo with Location Pin Icon -->
+            <a href="#home" class="flex items-center gap-2 text-2xl font-extrabold tracking-tight uppercase gradient-text">
+                <svg class="w-6 h-6 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>XTONAFAN KLODIN</span>
+            </a>
+
+            <!-- Desktop Nav Links (Men, Women, Location Pin Icon added) -->
+            <nav class="hidden lg:flex items-center space-x-8 text-xs uppercase tracking-widest font-bold text-slate-600">
+                <a href="#home" class="hover:text-cyan-600 transition-colors">Home</a>
+                <a href="#men" class="hover:text-cyan-600 transition-colors">Men</a>
+                <a href="#women" class="hover:text-purple-600 transition-colors">Women</a>
+                <a href="#about" class="hover:text-purple-600 transition-colors">About</a>
+                <a href="#hours" class="hover:text-cyan-500 transition-colors">Hours</a>
+                <a href="#contact" class="hover:text-rose-500 transition-colors">Contact</a>
+                <a href="#contact" class="flex items-center gap-1 text-rose-500 hover:text-rose-600 transition-colors" title="Studio Location">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span>Effutu</span>
+                </a>
+            </nav>
+
+            <!-- Cart Trigger Icon -->
+            <div class="flex items-center space-x-4">
+                <button id="cartToggleBtn" class="relative p-2.5 rounded-full bg-slate-100 hover:bg-rose-50 hover:text-rose-500 transition-all shadow-sm" aria-label="Cart">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <span id="cartCount" class="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-md">0</span>
                 </button>
-                <div id="mobile-team-dropdown" class="hidden pl-4 py-2 space-y-2">
-                    <a href="#chief-chef-section" onclick="toggleMobileMenu(); showChiefChefSection();" class="block text-slate-600 hover:text-red-600 font-medium">Chief Chef</a>
-                    <a href="#our-staff-section" onclick="toggleMobileMenu(); showStaffSection();" class="block text-slate-600 hover:text-red-600 font-medium">Our Staff</a>
-                </div>
             </div>
-            <a href="#hours" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-red-600 font-semibold">Hours</a>
-            <a href="#location" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-red-600 font-semibold flex items-center space-x-2"><i class="fa-solid fa-location-dot text-red-600"></i><span>Location</span></a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-red-600 font-semibold">Contact</a>
-            <a href="#booking" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-red-600 font-semibold">Book Appointment</a>
         </div>
-    </nav>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-100 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#home" class="block text-sm uppercase tracking-wider font-bold text-slate-700 hover:text-cyan-600">Home</a>
+            <a href="#men" class="block text-sm uppercase tracking-wider font-bold text-slate-700 hover:text-cyan-600">Men</a>
+            <a href="#women" class="block text-sm uppercase tracking-wider font-bold text-slate-700 hover:text-purple-600">Women</a>
+            <a href="#about" class="block text-sm uppercase tracking-wider font-bold text-slate-700 hover:text-purple-600">About</a>
+            <a href="#hours" class="block text-sm uppercase tracking-wider font-bold text-cyan-500">Hours</a>
+            <a href="#contact" class="block text-sm uppercase tracking-wider font-bold text-rose-500">Contact</a>
+        </div>
+    </header>
+
+    <!-- Slide-out Cart Drawer Area -->
+    <div id="cartDrawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+            <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2">🛒 Your Shopping Cart</h3>
+            <button id="closeCartBtn" class="text-slate-500 hover:text-rose-500 p-2 rounded-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <p id="emptyCartMsg" class="text-slate-400 text-center py-12 text-sm">Your cart is currently empty.</p>
+        </div>
+        <div class="p-6 border-t border-slate-100 bg-slate-50 space-y-3">
+            <div id="bulkDiscountNotice" class="text-xs text-purple-600 font-semibold hidden">🎉 5% Bulk Discount Applied (Qty > 3 items)!</div>
+            <div class="flex justify-between items-center">
+                <span class="text-xs uppercase tracking-widest font-bold text-slate-500">Subtotal</span>
+                <span id="cartSubtotal" class="font-extrabold text-xl text-rose-600">₵0.00</span>
+            </div>
+            <button onclick="checkoutWhatsApp()" class="w-full bg-gradient-to-r from-rose-500 to-purple-600 text-white py-3.5 rounded-xl text-xs uppercase tracking-widest font-bold hover:opacity-95 shadow-lg shadow-rose-500/20 transition-all cursor-pointer">
+                Checkout via WhatsApp 💬
+            </button>
+        </div>
+    </div>
+    <div id="cartOverlay" class="fixed inset-y-0 left-0 right-0 bg-slate-900/50 backdrop-blur-xs z-45 hidden"></div>
 
     <!-- HERO SECTION -->
-    <section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
-        <div class="hero-slide active bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1920&q=80');"></div>
-        <div class="hero-slide bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1920&q=80');"></div>
-        <div class="hero-slide bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=1920&q=80');"></div>
-
-        <div class="relative z-10 max-w-4xl mx-auto px-4 text-white mt-12">
-            <span class="inline-block bg-red-600/90 text-white text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6 backdrop-blur-sm">Welcome to Slice & Spice</span>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">Masterpieces in Woodfired Pizza & Smoky Jollof</h1>
-            <p class="text-lg sm:text-xl text-slate-200 mb-10 font-normal max-w-2xl mx-auto">Experience culinary excellence with our artisan pizzas, flavorful party jollof bowls, and ice-cold refreshments.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#menu" class="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-red-600/30 transition transform hover:-translate-y-0.5">Explore Full Menu</a>
-                <a href="#booking" class="bg-white/10 hover:bg-white/25 backdrop-blur-md text-white border border-white/20 font-bold px-8 py-4 rounded-2xl transition">Book a Table</a>
+    <section id="home" class="relative py-24 sm:py-32 bg-slate-900 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-40">
+            <img id="heroImage" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1920" alt="Studio Hero" class="w-full h-full object-cover transition-opacity duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent"></div>
+        </div>
+        <div class="relative max-w-4xl mx-auto px-4 text-center">
+            <span class="bg-rose-500/20 border border-rose-500/40 text-rose-300 backdrop-blur-md uppercase tracking-[0.25em] text-xs font-bold px-4 py-1.5 rounded-full mb-4 inline-block">Luxury Apparel Studio</span>
+            <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6">XTONAFAN <span class="gradient-text">KLODIN</span></h1>
+            <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-8">
+                Redefining luxury bespoke tailoring and ready-to-wear fashion from Liberia Camp GPRTU, Effutu, Central Region, Ghana.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#contact" class="bg-gradient-to-r from-rose-500 to-purple-600 text-white px-8 py-3.5 rounded-xl text-xs uppercase tracking-widest font-bold hover:opacity-95 shadow-lg shadow-rose-500/20 transition-all">
+                    Book Appointment 📅
+                </a>
+                <a href="#men" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md px-8 py-3.5 rounded-xl text-xs uppercase tracking-widest font-bold transition-all">
+                    Explore Collections ✨
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- MENU SECTION -->
-    <section id="menu" class="py-24 px-4 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <span class="text-red-600 font-extrabold text-sm tracking-widest uppercase mb-2 block">Our Gastronomy</span>
-            <h2 class="text-3xl sm:text-5xl font-black text-slate-900 mb-4 tracking-tight">Explore Our Menu Selection</h2>
-            <p class="text-slate-500 max-w-xl mx-auto text-base">All items are billed at exact standard menu pricing with zero discounts applied.</p>
+    <!-- MEN'S COLLECTION SECTION -->
+    <section id="men" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-slate-100">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs uppercase tracking-widest font-bold text-cyan-600 bg-cyan-50 px-3.5 py-1.5 rounded-full">Men's Atelier</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 mt-3 mb-2">Bespoke Suits & Tailoring</h2>
+            <p class="text-slate-600 text-sm">Immaculately crafted suits and gentleman's wear designed for distinction.</p>
         </div>
 
-        <div class="space-y-20">
-            <!-- CATEGORY 1: PIZZAS -->
-            <div>
-                <div class="flex items-center space-x-3 mb-8">
-                    <div class="w-10 h-10 bg-red-50 text-red-600 rounded-xl flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-pizza-slice"></i></div>
-                    <h3 class="text-2xl font-black text-slate-900 tracking-tight">Woodfired Pizzas (Sizes & Pricing)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col group relative">
+                <!-- Badges -->
+                <div class="absolute top-4 left-4 z-10 flex gap-2">
+                    <span class="bg-cyan-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">New Edition</span>
+                    <span class="bg-rose-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">10% Off</span>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Pizza 1 -->
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden h-56">
-                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" alt="Pepperoni Pizza" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm">Woodfired</span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h4 class="text-xl font-bold text-slate-900 mb-1">Classic Pepperoni Pizza</h4>
-                                <p class="text-slate-500 text-sm mb-6 leading-relaxed">Double-layered pepperoni, premium mozzarella cheese, and rich organic tomato sauce.</p>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between bg-slate-50 p-3 rounded-2xl">
-                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Select Size:</span>
-                                    <select id="pizza-1-size" class="bg-white border border-slate-200 rounded-xl px-3 py-1.5 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-600">
-                                        <option value="Small" data-price="10.00">Small ($10.00)</option>
-                                        <option value="Medium" data-price="15.00" selected>Medium ($15.00)</option>
-                                        <option value="Large" data-price="22.00">Large ($22.00)</option>
-                                    </select>
-                                </div>
-                                <button onclick="addPizzaToCart('Classic Pepperoni Pizza', 'pizza-1-size')" class="w-full bg-slate-900 hover:bg-red-600 text-white font-bold py-3.5 rounded-2xl transition duration-200 shadow-sm flex items-center justify-center space-x-2">
-                                    <i class="fa-solid fa-plus text-xs"></i>
-                                    <span>Add to Cart</span>
-                                </button>
+                <div class="relative h-72 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=800" alt="Executive Tailored Suit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">Executive Tailored Suit</h3>
+                            <div class="text-right">
+                                <span class="font-extrabold text-rose-600 text-base product-price" data-price-ghs="1350">₵1,350</span>
+                                <span class="block text-xs text-slate-400 line-through">₵1,500</span>
                             </div>
                         </div>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">Hand-crafted classic two-piece suit tailored with premium imported wool blend fabric for ultimate boardroom presence.</p>
                     </div>
+                    
+                    <!-- Quantity Selector & Action Buttons -->
+                    <div class="space-y-3 pt-2 border-t border-slate-100">
+                        <div class="flex items-center justify-between">
+                            <label class="text-xs uppercase tracking-widest font-bold text-slate-500">Quantity</label>
+                            <div class="flex items-center border border-slate-200 rounded-xl overflow-hidden">
+                                <button type="button" onclick="adjustQty('qty-suit-1', -1)" class="px-3 py-1 bg-slate-50 text-slate-600 font-bold hover:bg-slate-100">-</button>
+                                <input type="number" id="qty-suit-1" value="1" min="1" class="w-12 text-center text-xs font-bold text-slate-800 focus:outline-none" readonly>
+                                <button type="button" onclick="adjustQty('qty-suit-1', 1)" class="px-3 py-1 bg-slate-50 text-slate-600 font-bold hover:bg-slate-100">+</button>
+                            </div>
+                        </div>
 
-                    <!-- Pizza 2 -->
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden h-56">
-                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="Margherita Pizza" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm">Woodfired</span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h4 class="text-xl font-bold text-slate-900 mb-1">Margherita Pizza</h4>
-                                <p class="text-slate-500 text-sm mb-6 leading-relaxed">Fresh basil leaves, sliced organic tomatoes, extra virgin olive oil, and fresh mozzarella.</p>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between bg-slate-50 p-3 rounded-2xl">
-                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Select Size:</span>
-                                    <select id="pizza-2-size" class="bg-white border border-slate-200 rounded-xl px-3 py-1.5 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-600">
-                                        <option value="Small" data-price="8.00">Small ($8.00)</option>
-                                        <option value="Medium" data-price="12.00" selected>Medium ($12.00)</option>
-                                        <option value="Large" data-price="18.00">Large ($18.00)</option>
-                                    </select>
-                                </div>
-                                <button onclick="addPizzaToCart('Margherita Pizza', 'pizza-2-size')" class="w-full bg-slate-900 hover:bg-red-600 text-white font-bold py-3.5 rounded-2xl transition duration-200 shadow-sm flex items-center justify-center space-x-2">
-                                    <i class="fa-solid fa-plus text-xs"></i>
-                                    <span>Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Pizza 3 -->
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden h-56">
-                            <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=600&q=80" alt="BBQ Chicken Pizza" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm">Woodfired</span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h4 class="text-xl font-bold text-slate-900 mb-1">BBQ Chicken Pizza</h4>
-                                <p class="text-slate-500 text-sm mb-6 leading-relaxed">Tender grilled chicken chunks, smoky BBQ sauce drizzle, red onions, and fresh cilantro.</p>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between bg-slate-50 p-3 rounded-2xl">
-                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Select Size:</span>
-                                    <select id="pizza-3-size" class="bg-white border border-slate-200 rounded-xl px-3 py-1.5 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-600">
-                                        <option value="Small" data-price="11.00">Small ($11.00)</option>
-                                        <option value="Medium" data-price="16.00" selected>Medium ($16.00)</option>
-                                        <option value="Large" data-price="24.00">Large ($24.00)</option>
-                                    </select>
-                                </div>
-                                <button onclick="addPizzaToCart('BBQ Chicken Pizza', 'pizza-3-size')" class="w-full bg-slate-900 hover:bg-red-600 text-white font-bold py-3.5 rounded-2xl transition duration-200 shadow-sm flex items-center justify-center space-x-2">
-                                    <i class="fa-solid fa-plus text-xs"></i>
-                                    <span>Add to Cart</span>
-                                </button>
-                            </div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="addToCartWithQty('Executive Tailored Suit', 1350, 'qty-suit-1')" class="bg-slate-900 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-slate-800 transition-colors shadow-sm cursor-pointer">
+                                Add to Cart
+                            </button>
+                            <button onclick="orderNowWhatsApp('Executive Tailored Suit', 1350, 'qty-suit-1')" class="bg-emerald-600 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-emerald-700 transition-colors shadow-sm cursor-pointer">
+                                Order Now
+                            </button>
+                            <button onclick="bookAppointmentWithItem('Executive Tailored Suit')" class="bg-purple-600 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-purple-700 transition-colors shadow-sm cursor-pointer">
+                                Book Fitting
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- CATEGORY 2: JOLLF RICE BOWLS -->
-            <div>
-                <div class="flex items-center space-x-3 mb-8">
-                    <div class="w-10 h-10 bg-red-50 text-red-600 rounded-xl flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-bowl-food"></i></div>
-                    <h3 class="text-2xl font-black text-slate-900 tracking-tight">Smoky Jollof Rice Bowls (Bowl Sizes & Pricing)</h3>
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col group relative">
+                <!-- Badges -->
+                <div class="absolute top-4 left-4 z-10 flex gap-2">
+                    <span class="bg-cyan-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">New Edition</span>
+                    <span class="bg-rose-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">10% Off</span>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Jollof 1 -->
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden h-56">
-                            <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80" alt="Party Jollof" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm">Chef Special</span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h4 class="text-xl font-bold text-slate-900 mb-1">Signature Smoky Party Jollof</h4>
-                                <p class="text-slate-500 text-sm mb-6 leading-relaxed">Served alongside tender grilled chicken, sweet golden fried plantains, and rich shito sauce.</p>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between bg-slate-50 p-3 rounded-2xl">
-                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Select Bowl:</span>
-                                    <select id="jollof-1-size" class="bg-white border border-slate-200 rounded-xl px-3 py-1.5 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-600">
-                                        <option value="Regular Bowl" data-price="10.00">Regular Bowl ($10.00)</option>
-                                        <option value="Medium Bowl" data-price="14.00" selected>Medium Bowl ($14.00)</option>
-                                        <option value="Family Bowl" data-price="28.00">Family Bowl ($28.00)</option>
-                                    </select>
-                                </div>
-                                <button onclick="addJollofToCart('Signature Smoky Jollof', 'jollof-1-size')" class="w-full bg-slate-900 hover:bg-red-600 text-white font-bold py-3.5 rounded-2xl transition duration-200 shadow-sm flex items-center justify-center space-x-2">
-                                    <i class="fa-solid fa-plus text-xs"></i>
-                                    <span>Add to Cart</span>
-                                </button>
+                <div class="relative h-72 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&q=80&w=800" alt="Royal Agbada Ensemble" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">Royal Agbada Ensemble</h3>
+                            <div class="text-right">
+                                <span class="font-extrabold text-rose-600 text-base product-price" data-price-ghs="1620">₵1,620</span>
+                                <span class="block text-xs text-slate-400 line-through">₵1,800</span>
                             </div>
                         </div>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">Exquisite traditional African luxury wear featuring intricate hand embroidery and tailored inner trousers.</p>
                     </div>
-
-                    <!-- Jollof 2 -->
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition duration-300 flex flex-col justify-between group">
-                        <div class="relative overflow-hidden h-56">
-                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Beef Jollof Combo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm">Chef Special</span>
+                    
+                    <!-- Quantity Selector & Action Buttons -->
+                    <div class="space-y-3 pt-2 border-t border-slate-100">
+                        <div class="flex items-center justify-between">
+                            <label class="text-xs uppercase tracking-widest font-bold text-slate-500">Quantity</label>
+                            <div class="flex items-center border border-slate-200 rounded-xl overflow-hidden">
+                                <button type="button" onclick="adjustQty('qty-agbada', -1)" class="px-3 py-1 bg-slate-50 text-slate-600 font-bold hover:bg-slate-100">-</button>
+                                <input type="number" id="qty-agbada" value="1" min="1" class="w-12 text-center text-xs font-bold text-slate-800 focus:outline-none" readonly>
+                                <button type="button" onclick="adjustQty('qty-agbada', 1)" class="px-3 py-1 bg-slate-50 text-slate-600 font-bold hover:bg-slate-100">+</button>
+                            </div>
                         </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h4 class="text-xl font-bold text-slate-900 mb-1">Jollof with Beef & Salad</h4>
-                                <p class="text-slate-500 text-sm mb-6 leading-relaxed">Smokey party jollof rice accompanied by succulent seasoned beef chunks and fresh garden salad.</p>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between bg-slate-50 p-3 rounded-2xl">
-                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Select Bowl:</span>
-                                    <select id="jollof-2-size" class="bg-white border border-slate-200 rounded-xl px-3 py-1.5 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-600">
-                                        <option value="Regular Bowl" data-price="12.00">Regular Bowl ($12.00)</option>
-                                        <option value="Medium Bowl" data-price="16.00" selected>Medium Bowl ($16.00)</option>
-                                        <option value="Family Bowl" data-price="32.00">Family Bowl ($32.00)</option>
-                                    </select>
-                                </div>
-                                <button onclick="addJollofToCart('Jollof with Beef & Salad', 'jollof-2-size')" class="w-full bg-slate-900 hover:bg-red-600 text-white font-bold py-3.5 rounded-2xl transition duration-200 shadow-sm flex items-center justify-center space-x-2">
-                                    <i class="fa-solid fa-plus text-xs"></i>
-                                    <span>Add to Cart</span>
-                                </button>
-                            </div>
+
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="addToCartWithQty('Royal Agbada Ensemble', 1620, 'qty-agbada')" class="bg-slate-900 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-slate-800 transition-colors shadow-sm cursor-pointer">
+                                Add to Cart
+                            </button>
+                            <button onclick="orderNowWhatsApp('Royal Agbada Ensemble', 1620, 'qty-agbada')" class="bg-emerald-600 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-emerald-700 transition-colors shadow-sm cursor-pointer">
+                                Order Now
+                            </button>
+                            <button onclick="bookAppointmentWithItem('Royal Agbada Ensemble')" class="bg-purple-600 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-purple-700 transition-colors shadow-sm cursor-pointer">
+                                Book Fitting
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- CATEGORY 3: SOFT DRINKS & BEVERAGES -->
-            <div>
-                <div class="flex items-center space-x-3 mb-8">
-                    <div class="w-10 h-10 bg-red-50 text-red-600 rounded-xl flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-champagne-glasses"></i></div>
-                    <h3 class="text-2xl font-black text-slate-900 tracking-tight">Soft Drinks & Beverages</h3>
+            <!-- Product Card 3 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col group relative">
+                <!-- Badges -->
+                <div class="absolute top-4 left-4 z-10 flex gap-2">
+                    <span class="bg-cyan-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">New Edition</span>
+                    <span class="bg-rose-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">10% Off</span>
                 </div>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md p-5 text-center flex flex-col justify-between group transition">
-                        <div>
-                            <div class="w-14 h-14 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition"><i class="fa-solid fa-bottle-water"></i></div>
-                            <h5 class="font-bold text-slate-900 text-sm mb-1">Coca Cola</h5>
-                            <span class="text-red-600 font-extrabold text-sm">$2.50</span>
+                <div class="relative h-72 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800" alt="Modern Casual Blazer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">Modern Casual Blazer</h3>
+                            <div class="text-right">
+                                <span class="font-extrabold text-rose-600 text-base product-price" data-price-ghs="855">₵855</span>
+                                <span class="block text-xs text-slate-400 line-through">₵950</span>
+                            </div>
                         </div>
-                        <button onclick="addToCart('Coca Cola', 2.50)" class="mt-5 w-full bg-slate-100 hover:bg-red-600 hover:text-white text-slate-700 text-xs font-bold py-2.5 rounded-xl transition">Add</button>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">Smart-casual unstructured blazer designed for versatile styling from weekend outings to evening dinners.</p>
                     </div>
-
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md p-5 text-center flex flex-col justify-between group transition">
-                        <div>
-                            <div class="w-14 h-14 bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition"><i class="fa-solid fa-bottle-water"></i></div>
-                            <h5 class="font-bold text-slate-900 text-sm mb-1">Mirinda</h5>
-                            <span class="text-red-600 font-extrabold text-sm">$2.50</span>
+                    
+                    <!-- Quantity Selector & Action Buttons -->
+                    <div class="space-y-3 pt-2 border-t border-slate-100">
+                        <div class="flex items-center justify-between">
+                            <label class="text-xs uppercase tracking-widest font-bold text-slate-500">Quantity</label>
+                            <div class="flex items-center border border-slate-200 rounded-xl overflow-hidden">
+                                <button type="button" onclick="adjustQty('qty-blazer', -1)" class="px-3 py-1 bg-slate-50 text-slate-600 font-bold hover:bg-slate-100">-</button>
+                                <input type="number" id="qty-blazer" value="1" min="1" class="w-12 text-center text-xs font-bold text-slate-800 focus:outline-none" readonly>
+                                <button type="button" onclick="adjustQty('qty-blazer', 1)" class="px-3 py-1 bg-slate-50 text-slate-600 font-bold hover:bg-slate-100">+</button>
+                            </div>
                         </div>
-                        <button onclick="addToCart('Mirinda', 2.50)" class="mt-5 w-full bg-slate-100 hover:bg-red-600 hover:text-white text-slate-700 text-xs font-bold py-2.5 rounded-xl transition">Add</button>
+
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="addToCartWithQty('Modern Casual Blazer', 855, 'qty-blazer')" class="bg-slate-900 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-slate-800 transition-colors shadow-sm cursor-pointer">
+                                Add to Cart
+                            </button>
+                            <button onclick="orderNowWhatsApp('Modern Casual Blazer', 855, 'qty-blazer')" class="bg-emerald-600 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-emerald-700 transition-colors shadow-sm cursor-pointer">
+                                Order Now
+                            </button>
+                            <button onclick="bookAppointmentWithItem('Modern Casual Blazer')" class="bg-purple-600 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-purple-700 transition-colors shadow-sm cursor-pointer">
+                                Book Fitting
+                            </button>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md p-5 text-center flex flex-col justify-between group transition">
-                        <div>
-                            <div class="w-14 h-14 bg-yellow-50 text-yellow-500 rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition"><i class="fa-solid fa-bottle-water"></i></div>
-                            <h5 class="font-bold text-slate-900 text-sm mb-1">Fanta</h5>
-                            <span class="text-red-600 font-extrabold text-sm">$2.50</span>
+    <!-- WOMEN'S COLLECTION SECTION -->
+    <section id="women" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-slate-100">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs uppercase tracking-widest font-bold text-purple-600 bg-purple-50 px-3.5 py-1.5 rounded-full">Women's Atelier</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 mt-3 mb-2">Elegance & Haute Couture</h2>
+            <p class="text-slate-600 text-sm">Stunning dresses, gowns, and bespoke feminine attire tailored to perfection.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product Card 4 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col group relative">
+                <!-- Badges -->
+                <div class="absolute top-4 left-4 z-10 flex gap-2">
+                    <span class="bg-cyan-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">New Edition</span>
+                    <span class="bg-rose-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">10% Off</span>
+                </div>
+                <div class="relative h-72 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&q=80&w=800" alt="Haute Evening Gown" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">Haute Evening Gown</h3>
+                            <div class="text-right">
+                                <span class="font-extrabold text-rose-600 text-base product-price" data-price-ghs="1485">₵1,485</span>
+                                <span class="block text-xs text-slate-400 line-through">₵1,650</span>
+                            </div>
                         </div>
-                        <button onclick="addToCart('Fanta', 2.50)" class="mt-5 w-full bg-slate-100 hover:bg-red-600 hover:text-white text-slate-700 text-xs font-bold py-2.5 rounded-xl transition">Add</button>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">Floor-sweeping silk evening gown designed with delicate draping and an unforgettable silhouette for red carpets.</p>
                     </div>
-
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md p-5 text-center flex flex-col justify-between group transition">
-                        <div>
-                            <div class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition"><i class="fa-solid fa-bottle-water"></i></div>
-                            <h5 class="font-bold text-slate-900 text-sm mb-1">Sprite</h5>
-                            <span class="text-red-600 font-extrabold text-sm">$2.50</span>
+                    
+                    <!-- Quantity Selector & Action Buttons -->
+                    <div class="space-y-3 pt-2 border-t border-slate-100">
+                        <div class="flex items-center justify-between">
+                            <label class="text-xs uppercase tracking-widest font-bold text-slate-500">Quantity</label>
+                            <div class="flex items-center border border-slate-200 rounded-xl overflow-hidden">
+                                <button type="button" onclick="adjustQty('qty-gown', -1)" class="px-3 py-1 bg-slate-50 text-slate-600 font-bold hover:bg-slate-100">-</button>
+                                <input type="number" id="qty-gown" value="1" min="1" class="w-12 text-center text-xs font-bold text-slate-800 focus:outline-none" readonly>
+                                <button type="button" onclick="adjustQty('qty-gown', 1)" class="px-3 py-1 bg-slate-50 text-slate-600 font-bold hover:bg-slate-100">+</button>
+                            </div>
                         </div>
-                        <button onclick="addToCart('Sprite', 2.50)" class="mt-5 w-full bg-slate-100 hover:bg-red-600 hover:text-white text-slate-700 text-xs font-bold py-2.5 rounded-xl transition">Add</button>
+
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="addToCartWithQty('Haute Evening Gown', 1485, 'qty-gown')" class="bg-slate-900 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-slate-800 transition-colors shadow-sm cursor-pointer">
+                                Add to Cart
+                            </button>
+                            <button onclick="orderNowWhatsApp('Haute Evening Gown', 1485, 'qty-gown')" class="bg-emerald-600 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-emerald-700 transition-colors shadow-sm cursor-pointer">
+                                Order Now
+                            </button>
+                            <button onclick="bookAppointmentWithItem('Haute Evening Gown')" class="bg-purple-600 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-purple-700 transition-colors shadow-sm cursor-pointer">
+                                Book Fitting
+                            </button>
+                        </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md p-5 text-center flex flex-col justify-between group transition">
-                        <div>
-                            <div class="w-14 h-14 bg-amber-50 text-amber-700 rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition"><i class="fa-solid fa-bottle-water"></i></div>
-                            <h5 class="font-bold text-slate-900 text-sm mb-1">Alvaro</h5>
-                            <span class="text-red-600 font-extrabold text-sm">$2.50</span>
+            <!-- Product Card 5 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col group relative">
+                <!-- Badges -->
+                <div class="absolute top-4 left-4 z-10 flex gap-2">
+                    <span class="bg-cyan-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">New Edition</span>
+                    <span class="bg-rose-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">10% Off</span>
+                </div>
+                <div class="relative h-72 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=800" alt="Chic Designer Midi Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">Chic Designer Midi Dress</h3>
+                            <div class="text-right">
+                                <span class="font-extrabold text-rose-600 text-base product-price" data-price-ghs="765">₵765</span>
+                                <span class="block text-xs text-slate-400 line-through">₵850</span>
+                            </div>
                         </div>
-                        <button onclick="addToCart('Alvaro', 2.50)" class="mt-5 w-full bg-slate-100 hover:bg-red-600 hover:text-white text-slate-700 text-xs font-bold py-2.5 rounded-xl transition">Add</button>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">Sophisticated tailored midi dress combining contemporary professional lines with luxurious comfort.</p>
                     </div>
-
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md p-5 text-center flex flex-col justify-between group transition">
-                        <div>
-                            <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition"><i class="fa-solid fa-bottle-water"></i></div>
-                            <h5 class="font-bold text-slate-900 text-sm mb-1">Punch</h5>
-                            <span class="text-red-600 font-extrabold text-sm">$2.50</span>
+                    
+                    <!-- Quantity Selector & Action Buttons -->
+                    <div class="space-y-3 pt-2 border-t border-slate-100">
+                        <div class="flex items-center justify-between">
+                            <label class="text-xs uppercase tracking-widest font-bold text-slate-500">Quantity</label>
+                            <div class="flex items-center border border-slate-200 rounded-xl overflow-hidden">
+                                <button type="button" onclick="adjustQty('qty-midi', -1)" class="px-3 py-1 bg-slate-50 text-slate-600 font-bold hover:bg-slate-100">-</button>
+                                <input type="number" id="qty-midi" value="1" min="1" class="w-12 text-center text-xs font-bold text-slate-800 focus:outline-none" readonly>
+                                <button type="button" onclick="adjustQty('qty-midi', 1)" class="px-3 py-1 bg-slate-50 text-slate-600 font-bold hover:bg-slate-100">+</button>
+                            </div>
                         </div>
-                        <button onclick="addToCart('Punch', 2.50)" class="mt-5 w-full bg-slate-100 hover:bg-red-600 hover:text-white text-slate-700 text-xs font-bold py-2.5 rounded-xl transition">Add</button>
+
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="addToCartWithQty('Chic Designer Midi Dress', 765, 'qty-midi')" class="bg-slate-900 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-slate-800 transition-colors shadow-sm cursor-pointer">
+                                Add to Cart
+                            </button>
+                            <button onclick="orderNowWhatsApp('Chic Designer Midi Dress', 765, 'qty-midi')" class="bg-emerald-600 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-emerald-700 transition-colors shadow-sm cursor-pointer">
+                                Order Now
+                            </button>
+                            <button onclick="bookAppointmentWithItem('Chic Designer Midi Dress')" class="bg-purple-600 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-purple-700 transition-colors shadow-sm cursor-pointer">
+                                Book Fitting
+                            </button>
+                        </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md p-5 text-center flex flex-col justify-between group transition">
-                        <div>
-                            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition"><i class="fa-solid fa-glass-water"></i></div>
-                            <h5 class="font-bold text-slate-900 text-sm mb-1">Mineral Water</h5>
-                            <span class="text-red-600 font-extrabold text-sm">$1.50</span>
+            <!-- Product Card 6 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col group relative">
+                <!-- Badges -->
+                <div class="absolute top-4 left-4 z-10 flex gap-2">
+                    <span class="bg-cyan-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">New Edition</span>
+                    <span class="bg-rose-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">10% Off</span>
+                </div>
+                <div class="relative h-72 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800" alt="Royal African Print Kente Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">Royal African Print Kente Set</h3>
+                            <div class="text-right">
+                                <span class="font-extrabold text-rose-600 text-base product-price" data-price-ghs="1260">₵1,260</span>
+                                <span class="block text-xs text-slate-400 line-through">₵1,400</span>
+                            </div>
                         </div>
-                        <button onclick="addToCart('Mineral Water', 1.50)" class="mt-5 w-full bg-slate-100 hover:bg-red-600 hover:text-white text-slate-700 text-xs font-bold py-2.5 rounded-xl transition">Add</button>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">Vibrant two-piece custom African print attire expertly tailored to highlight heritage and modern luxury.</p>
+                    </div>
+                    
+                    <!-- Quantity Selector & Action Buttons -->
+                    <div class="space-y-3 pt-2 border-t border-slate-100">
+                        <div class="flex items-center justify-between">
+                            <label class="text-xs uppercase tracking-widest font-bold text-slate-500">Quantity</label>
+                            <div class="flex items-center border border-slate-200 rounded-xl overflow-hidden">
+                                <button type="button" onclick="adjustQty('qty-kente', -1)" class="px-3 py-1 bg-slate-50 text-slate-600 font-bold hover:bg-slate-100">-</button>
+                                <input type="number" id="qty-kente" value="1" min="1" class="w-12 text-center text-xs font-bold text-slate-800 focus:outline-none" readonly>
+                                <button type="button" onclick="adjustQty('qty-kente', 1)" class="px-3 py-1 bg-slate-50 text-slate-600 font-bold hover:bg-slate-100">+</button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="addToCartWithQty('Royal African Print Kente Set', 1260, 'qty-kente')" class="bg-slate-900 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-slate-800 transition-colors shadow-sm cursor-pointer">
+                                Add to Cart
+                            </button>
+                            <button onclick="orderNowWhatsApp('Royal African Print Kente Set', 1260, 'qty-kente')" class="bg-emerald-600 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-emerald-700 transition-colors shadow-sm cursor-pointer">
+                                Order Now
+                            </button>
+                            <button onclick="bookAppointmentWithItem('Royal African Print Kente Set')" class="bg-purple-600 text-white py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-purple-700 transition-colors shadow-sm cursor-pointer">
+                                Book Fitting
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -372,308 +468,410 @@
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="bg-white py-24 px-4 border-y border-slate-100">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div class="relative">
-                <div class="absolute -inset-4 bg-red-600/10 rounded-[2.5rem] -rotate-2"></div>
-                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Restaurant Interior" class="relative rounded-3xl shadow-xl w-full object-cover h-[450px]">
+    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-slate-100">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div class="space-y-6">
+                <span class="text-xs uppercase tracking-widest font-bold text-purple-600 bg-purple-50 px-3.5 py-1.5 rounded-full">Our Heritage</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Crafting Excellence with Every Stitch</h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Founded with a passion for meticulous craftsmanship and exceptional design, <strong>XTONAFAN KLODIN</strong> brings a fresh perspective to luxury apparel. Located at Liberia Camp GPRTU in Effutu, Central Region, our studio serves discerning clients who appreciate premium fabrics, flawless fits, and timeless elegance.
+                </p>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Whether crafting custom bespoke suits for men, elegant attire for women, or charming wear for boys and girls, our master tailors combine traditional tailoring artistry with contemporary style.
+                </p>
             </div>
-            <div>
-                <span class="text-red-600 font-extrabold text-sm tracking-widest uppercase mb-2 block">Our Heritage</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-6 tracking-tight">About Slice & Spice</h2>
-                <p class="text-slate-600 mb-4 leading-relaxed text-base">Welcome to Slice & Spice, where culinary artistry meets unmatched flavor! Founded with a clear vision to serve authentic comfort foods, we specialize in wood-fired artisan pizzas and aromatic smoky party jollof prepared with top-tier local and imported ingredients.</p>
-                <p class="text-slate-600 mb-8 leading-relaxed text-base">Whether you are joining us for a cozy indoor dinner, hosting a family gathering, or ordering quick deliveries straight to your doorstep, our commitment to exceptional quality shines in every single bite.</p>
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100">
-                        <h4 class="text-3xl font-black text-red-600 mb-1">100%</h4>
-                        <p class="text-sm font-semibold text-slate-600">Authentic Ingredients</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100">
-                        <h4 class="text-3xl font-black text-red-600 mb-1">Fast</h4>
-                        <p class="text-sm font-semibold text-slate-600">WhatsApp Ordering</p>
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-100">
+                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=1000" alt="Atelier Craftsmanship" class="w-full h-96 object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-8">
+                    <div class="text-white">
+                        <span class="text-xs uppercase tracking-widest font-bold text-rose-400">Master Tailoring</span>
+                        <h4 class="text-xl font-bold mt-1">Uncompromising Quality & Precision</h4>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Core Values Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4">
+                <div class="w-12 h-12 bg-rose-50 text-rose-500 rounded-2xl flex items-center justify-center font-bold text-xl">✨</div>
+                <h3 class="text-xl font-bold text-slate-900">Bespoke Precision</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Every garment is tailored to exact individual measurements, ensuring an immaculate fit and silhouette.</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4">
+                <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center font-bold text-xl">🧵</div>
+                <h3 class="text-xl font-bold text-slate-900">Premium Fabrics</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">We source only the finest textiles from around the world to guarantee durability, comfort, and luxury.</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4">
+                <div class="w-12 h-12 bg-cyan-50 text-cyan-600 rounded-2xl flex items-center justify-center font-bold text-xl">🤝</div>
+                <h3 class="text-xl font-bold text-slate-900">Private Consultations</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Enjoy personalized styling sessions and fittings in our exclusive private studio environment.</p>
             </div>
         </div>
     </section>
 
     <!-- HOURS SECTION -->
-    <section id="hours" class="py-24 px-4 max-w-4xl mx-auto">
-        <div class="bg-white rounded-[2.5rem] shadow-xl border border-slate-100 p-8 sm:p-14 text-center">
-            <span class="text-red-600 font-extrabold text-sm tracking-widest uppercase mb-2 block">Opening Times</span>
-            <h2 class="text-3xl font-black text-slate-900 mb-6 tracking-tight">Working Hours</h2>
-            <div class="max-w-md mx-auto space-y-4 text-left">
-                <div class="flex justify-between items-center bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                    <span class="font-bold text-slate-700">Monday – Thursday</span>
-                    <span class="font-semibold text-red-600">10:00 AM – 10:00 PM</span>
-                </div>
-                <div class="flex justify-between items-center bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                    <span class="font-bold text-slate-700">Friday – Saturday</span>
-                    <span class="font-semibold text-red-600">10:00 AM – 11:30 PM</span>
-                </div>
-                <div class="flex justify-between items-center bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                    <span class="font-bold text-slate-700">Sunday</span>
-                    <span class="font-semibold text-red-600">12:00 PM – 10:00 PM</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- LOCATION SECTION -->
-    <section id="location" class="bg-white py-24 px-4 border-y border-slate-100">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="text-red-600 font-extrabold text-sm tracking-widest uppercase mb-2 block">Visit Us</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-6 tracking-tight">Come Visit Our Restaurant</h2>
-                <p class="text-slate-600 mb-6 leading-relaxed text-base">We love hosting our guests! Visit our flagship restaurant located right at Buduburam GPRTU station in the Central Region for an unforgettable dining experience.</p>
-                <div class="flex items-center space-x-5 mb-8">
-                    <div class="w-14 h-14 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-location-dot"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-900 text-lg">Main Restaurant</h4>
-                        <p class="text-slate-600 font-semibold">Central Region - Buduburam - GPRTU</p>
-                    </div>
-                </div>
-            </div>
-            <div class="relative">
-                <div class="absolute -inset-4 bg-red-600/10 rounded-[2.5rem] rotate-2"></div>
-                <div class="relative rounded-3xl shadow-xl w-full h-[400px] bg-slate-200 overflow-hidden">
-                    <iframe width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.824775956799!2d-0.455!3d5.533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sNsKwMzInMDAuMCJOIDAbMjcnMTguMCJX!5e0!3m2!1sen!2sgh!4v1650000000000!5m2!1sen!2sgh"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BOOK APPOINTMENT / TABLE SECTION -->
-    <section id="booking" class="py-24 px-4 max-w-4xl mx-auto">
-        <div class="bg-white rounded-[2.5rem] shadow-xl border border-slate-100 p-8 sm:p-14">
-            <div class="text-center mb-12">
-                <span class="text-red-600 font-extrabold text-sm tracking-widest uppercase mb-2 block">Reservations</span>
-                <h2 class="text-3xl font-black text-slate-900 mb-3 tracking-tight">Book a Table / Appointment</h2>
-                <p class="text-slate-500">Fill out your details below to instantly receive your reservation summary and send it directly via WhatsApp.</p>
-            </div>
+    <section id="hours" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-slate-100">
+        <div class="max-w-3xl mx-auto bg-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-800 text-center space-y-8">
+            <span class="text-xs uppercase tracking-widest font-bold text-cyan-400 bg-cyan-500/10 px-4 py-1.5 rounded-full inline-block">Studio Schedule</span>
+            <h2 class="text-3xl sm:text-4xl font-black">Operating Hours</h2>
+            <p class="text-slate-300 text-sm max-w-md mx-auto">Visit our flagship studio or schedule a private consultation during our dedicated hours.</p>
             
-            <form onsubmit="bookAppointment(event)" class="space-y-6">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Full Name</label>
-                        <input type="text" id="book-name" required placeholder="John Doe" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-red-600 focus:outline-none font-medium text-slate-800">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Phone Number</label>
-                        <input type="tel" id="book-phone" required placeholder="0539847422" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-red-600 focus:outline-none font-medium text-slate-800">
-                    </div>
+            <div class="bg-slate-950/60 rounded-2xl p-6 sm:p-8 max-w-lg mx-auto space-y-4 border border-slate-800/80 text-left">
+                <div class="flex justify-between items-center py-2 border-b border-slate-800 text-sm">
+                    <span class="text-slate-400 font-medium">Monday – Friday</span>
+                    <span class="font-bold text-white">8:00 AM – 7:00 PM</span>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Date</label>
-                        <input type="date" id="book-date" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-red-600 focus:outline-none font-medium text-slate-800">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Time</label>
-                        <input type="time" id="book-time" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-red-600 focus:outline-none font-medium text-slate-800">
-                    </div>
+                <div class="flex justify-between items-center py-2 border-b border-slate-800 text-sm">
+                    <span class="text-slate-400 font-medium">Saturday</span>
+                    <span class="font-bold text-white">9:00 AM – 6:00 PM</span>
                 </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Number of Guests / Special Request</label>
-                    <textarea id="book-notes" rows="3" placeholder="e.g. Table for 4, anniversary celebration" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-red-600 focus:outline-none font-medium text-slate-800"></textarea>
+                <div class="flex justify-between items-center py-2 text-sm">
+                    <span class="text-slate-400 font-medium">Sunday</span>
+                    <span class="font-bold text-purple-400">By VIP Appointment Only</span>
                 </div>
-                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-2xl shadow-xl shadow-green-600/20 transition duration-200 flex items-center justify-center space-x-3 text-base">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i>
-                    <span>Submit Reservation</span>
-                </button>
-            </form>
+            </div>
+
+            <p class="text-xs text-slate-400">Private bespoke fittings and tailored consultations can also be arranged outside of regular hours by contacting us on WhatsApp.</p>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-white py-16 px-4">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-                <div class="flex items-center justify-center md:justify-start space-x-2 mb-3">
-                    <div class="w-8 h-8 bg-red-600 rounded-xl flex items-center justify-center text-white font-black text-sm">
-                        <i class="fa-solid fa-fire-flame-curved"></i>
-                    </div>
-                    <span class="text-xl font-black tracking-tight">SLICE <span class="text-red-600">&</span> SPICE</span>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            
+            <!-- Left: Appointment Booking Form -->
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-slate-100 space-y-6">
+                <div>
+                    <span class="text-xs uppercase tracking-widest font-bold text-rose-500 bg-rose-50 px-3.5 py-1.5 rounded-full">Book Appointment</span>
+                    <h2 class="text-2xl font-extrabold text-slate-900 mt-3 mb-2">Schedule Your Fitting</h2>
+                    <p class="text-slate-600 text-sm">Fill in your details below to instantly connect with our team on WhatsApp.</p>
                 </div>
-                <p class="text-slate-400 text-sm">Serving world-class pizzas, jollof, and cold drinks.</p>
+
+                <form id="appointmentForm" onsubmit="event.preventDefault(); bookAppointmentWhatsApp();" class="space-y-4 pt-2">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest font-bold text-slate-700 mb-2">Client Name</label>
+                        <input type="text" id="clientName" required placeholder="e.g., Ama Mensah" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-rose-500 transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest font-bold text-slate-700 mb-2">Phone / WhatsApp Number</label>
+                        <input type="tel" id="clientPhone" required placeholder="e.g., +233 24 000 0000" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-rose-500 transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest font-bold text-slate-700 mb-2">Preferred Event Date / Fitting Date</label>
+                        <input type="date" id="eventDate" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-rose-500 transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest font-bold text-slate-700 mb-2">Additional Notes / Custom Request</label>
+                        <textarea id="clientNotes" rows="3" placeholder="Describe your fitting requirements or custom garments..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-rose-500 transition-colors"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-rose-500 to-purple-600 text-white py-4 rounded-xl text-xs uppercase tracking-widest font-bold hover:opacity-95 shadow-lg shadow-rose-500/20 transition-all cursor-pointer flex items-center justify-center gap-2">
+                        Book Appointment via WhatsApp 💬
+                    </button>
+                </form>
             </div>
-            <p class="text-slate-500 text-sm">&copy; 2026 Slice & Spice. All rights reserved.</p>
+
+            <!-- Right: Studio Info & Location Details -->
+            <div class="space-y-8">
+                <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-800 space-y-6">
+                    <span class="text-xs uppercase tracking-widest font-bold text-cyan-400 bg-cyan-500/10 px-3 py-1.5 rounded-full">Flagship Studio</span>
+                    <h3 class="text-2xl font-extrabold">Visit Our Location</h3>
+                    <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+                        <p class="flex items-start gap-3">
+                            <span class="text-rose-400 font-bold">📍</span>
+                            <span><strong>Address:</strong> Liberia Camp GPRTU, Effutu, Central Region, Ghana</span>
+                        </p>
+                        <p class="flex items-start gap-3">
+                            <span class="text-rose-400 font-bold">📞</span>
+                            <span><strong>Phone / WhatsApp:</strong> <a href="tel:+233551201696" class="text-cyan-400 hover:underline">+233 551 201 696</a></span>
+                        </p>
+                        <p class="flex items-start gap-3">
+                            <span class="text-rose-400 font-bold">✉️</span>
+                            <span><strong>Email:</strong> <a href="mailto:atelier@auraatelier.com" class="text-purple-400 hover:underline">atelier@auraatelier.com</a></span>
+                        </p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800">
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-slate-400 mb-3">Operating Hours Summary</h4>
+                        <div class="space-y-2 text-xs text-slate-300">
+                            <div class="flex justify-between"><span>Mon – Fri:</span> <span class="font-bold text-white">8:00 AM – 7:00 PM</span></div>
+                            <div class="flex justify-between"><span>Saturday:</span> <span class="font-bold text-white">9:00 AM – 6:00 PM</span></div>
+                            <div class="flex justify-between"><span>Sunday:</span> <span class="font-bold text-purple-400">By VIP Appointment Only</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-3xl p-8 sm:p-10 shadow-lg text-center space-y-4">
+                    <h3 class="text-2xl font-black">Need Immediate Assistance?</h3>
+                    <p class="text-sm text-white/90 max-w-md mx-auto">Call our studio directly or chat with a stylist right now for quick inquiries.</p>
+                    <a href="tel:+233551201696" onclick="triggerCallNotification(event)" class="inline-block bg-slate-900 text-white px-8 py-3.5 rounded-xl text-xs uppercase tracking-widest font-bold hover:bg-slate-800 shadow-md transition-all">
+                        Call Studio Now (+233 551-201-696) 📞
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+            <div>
+                <h3 class="text-xl font-extrabold mb-3 gradient-text uppercase tracking-wider">XTONAFAN KLODIN</h3>
+                <p class="text-xs text-slate-400 tracking-wider">Studio Address: Liberia Camp GPRTU, Effutu, Central Region</p>
+            </div>
+            <div>
+                <h4 class="text-xs uppercase tracking-widest text-rose-400 mb-3 font-bold">Contact XTONAFAN KLODIN</h4>
+                <p class="text-sm text-slate-300">Email: atelier@auraatelier.com</p>
+                <p class="text-sm text-slate-300 mt-1">Phone: +233 551-201-696</p>
+            </div>
+            <div>
+                <h4 class="text-xs uppercase tracking-widest text-cyan-400 mb-3 font-bold">Direct Call Notification</h4>
+                <a href="tel:+233551201696" onclick="triggerCallNotification(event)" class="block w-full bg-gradient-to-r from-rose-500 to-purple-600 text-white py-3.5 rounded-xl text-xs uppercase tracking-widest font-bold text-center hover:opacity-95 shadow-lg transition-all">
+                    Call Studio Now 📞
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-6 border-t border-slate-900 text-center text-xs text-slate-500">
+            &copy; 2026 XTONAFAN KLODIN Studio (Liberia Camp GPRTU, Effutu, Central Region). All rights reserved.
         </div>
     </footer>
 
-    <!-- CART SIDEBAR MODAL -->
-    <div id="cart-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex justify-end transition-opacity">
-        <div class="bg-white w-full max-w-md h-full flex flex-col p-6 sm:p-8 shadow-2xl">
-            <div class="flex justify-between items-center border-b border-slate-100 pb-5">
-                <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-cart-shopping text-red-600"></i>
-                    <h3 class="text-xl font-black text-slate-900 tracking-tight">Your Cart (No Discounts)</h3>
-                </div>
-                <button onclick="toggleCart()" class="w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-bold transition">&times;</button>
-            </div>
-            <div id="cart-items" class="flex-1 overflow-y-auto py-6 space-y-4">
-                <p class="text-slate-400 text-center py-12 text-sm font-medium">Your cart is currently empty.</p>
-            </div>
-            <div class="border-t border-slate-100 pt-6">
-                <div class="flex justify-between items-center mb-6">
-                    <span class="font-bold text-slate-600">Total Amount:</span>
-                    <span id="cart-total" class="font-black text-2xl text-red-600">$0.00</span>
-                </div>
-                <button onclick="checkoutWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-2xl shadow-xl shadow-green-600/20 transition flex items-center justify-center space-x-3 text-base">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i>
-                    <span>Order Now via WhatsApp</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC WITH NO DISCOUNT ENFORCEMENT -->
+    <!-- Interactive JavaScript Logic -->
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.hero-slide');
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 3000);
-
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-
-        function toggleTeamDropdown(event) {
-            event.stopPropagation();
-            document.getElementById('team-dropdown').classList.toggle('hidden');
-        }
-
-        function toggleMobileTeamDropdown() {
-            document.getElementById('mobile-team-dropdown').classList.toggle('hidden');
-        }
-
-        window.addEventListener('click', function() {
-            const dropdown = document.getElementById('team-dropdown');
-            if (dropdown && !dropdown.classList.contains('hidden')) {
-                dropdown.classList.add('hidden');
-            }
+        // 1. Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
-        // Cart Data Structure
+        // Close mobile menu when clicking nav links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // WhatsApp Number Configuration (+233 551 201 696)
+        const WHATSAPP_NUMBER = "233551201696";
+
+        // 2. Hero Background Images Rotating Script (every 3 seconds)
+        const heroImages = [
+            "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1920",
+            "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1920",
+            "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=1920"
+        ];
+        let currentHeroIndex = 0;
+        const heroImageElement = document.getElementById('heroImage');
+
+        setInterval(() => {
+            currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+            heroImageElement.style.opacity = 0;
+            setTimeout(() => {
+                heroImageElement.src = heroImages[currentHeroIndex];
+                heroImageElement.style.opacity = 0.4;
+            }, 300);
+        }, 3000);
+
+        // 3. Quantity Adjuster for Product Cards
+        function adjustQty(inputId, delta) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+            let current = parseInt(input.value) || 1;
+            current += delta;
+            if (current < 1) current = 1;
+            input.value = current;
+        }
+
+        // 4. Book Appointment WhatsApp Redirection with Form Fields
+        function bookAppointmentWhatsApp() {
+            const name = document.getElementById('clientName')?.value || 'Not provided';
+            const phone = document.getElementById('clientPhone')?.value || 'Not provided';
+            const eventDate = document.getElementById('eventDate')?.value || 'Not provided';
+            const notes = document.getElementById('clientNotes')?.value || 'None';
+
+            const text = encodeURIComponent(
+                `📅 *New Appointment Booking Request*\n\n` +
+                `- *Client Name:* ${name}\n` +
+                `- *Phone/WhatsApp:* ${phone}\n` +
+                `- *Preferred Fitting Date:* ${eventDate}\n` +
+                `- *Notes:* ${notes}\n\n` +
+                `Please confirm appointment scheduling.`
+            );
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+        }
+
+        // Book Fitting directly for a specific item
+        function bookAppointmentWithItem(itemName) {
+            const text = encodeURIComponent(
+                `📅 *Private Fitting Booking Request*\n\n` +
+                `I would like to schedule a private studio fitting for: *${itemName}*.\n\n` +
+                `Please contact me to arrange a suitable date and time.`
+            );
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+        }
+
+        // Order Now WhatsApp Direct Notification
+        function orderNowWhatsApp(name, priceGHS, qtyInputId) {
+            const qty = parseInt(document.getElementById(qtyInputId)?.value) || 1;
+            const { symbol, rate } = currencyRates[currentCurrency];
+            const convertedPrice = (priceGHS * rate).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+            const totalConverted = (priceGHS * qty * rate).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+
+            const text = encodeURIComponent(
+                `🚀 *New Direct Order Notification*\n\n` +
+                `- *Item:* ${name}\n` +
+                `- *Quantity:* ${qty}\n` +
+                `- *Unit Price:* ${symbol}${convertedPrice}\n` +
+                `- *Total Amount:* ${symbol}${totalConverted}\n\n` +
+                `Please process this immediate order.`
+            );
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+        }
+
+        // 5. Call Notification Trigger
+        function triggerCallNotification(e) {
+            const notifText = encodeURIComponent("🔔 Notification: A visitor just clicked 'Call Studio Now' to reach your line (+233 551 201 696).");
+        }
+
+        // 6. Currency Switcher Logic & Conversion Rates
+        const currencyRates = {
+            GHS: { symbol: '₵', rate: 1.0 },
+            USD: { symbol: '$', rate: 1 / 15.5 },
+            EUR: { symbol: '€', rate: 0.92 / 15.5 },
+            GBP: { symbol: '£', rate: 0.79 / 15.5 }
+        };
+
+        let currentCurrency = 'GHS';
         let cart = [];
 
-        function toggleCart() {
-            document.getElementById('cart-modal').classList.toggle('hidden');
+        const currencySelector = document.getElementById('currencySelector');
+        currencySelector.addEventListener('change', (e) => {
+            currentCurrency = e.target.value;
+            updatePricesDisplay();
+            updateCartUI();
+        });
+
+        function updatePricesDisplay() {
+            // Note: Product base prices here are already discounted by 10% from the original values
+            const basePricesGHS = [1350, 1620, 855, 1485, 765, 1260];
+            const { symbol, rate } = currencyRates[currentCurrency];
+            const priceElements = document.querySelectorAll('.product-price');
+            
+            priceElements.forEach((el, idx) => {
+                const converted = (basePricesGHS[idx] * rate).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+                el.textContent = `${symbol}${converted}`;
+            });
         }
 
-        function addToCart(name, price) {
-            // Strict full price recording with zero discounts
-            const exactPrice = parseFloat(price);
-            const existingItem = cart.find(item => item.name === name && item.price === exactPrice);
-            if (existingItem) {
-                existingItem.quantity += 1;
+        // Cart Drawer Handlers
+        const cartDrawer = document.getElementById('cartDrawer');
+        const cartOverlay = document.getElementById('cartOverlay');
+
+        document.getElementById('cartToggleBtn').addEventListener('click', toggleCart);
+        document.getElementById('closeCartBtn').addEventListener('click', toggleCart);
+        cartOverlay.addEventListener('click', toggleCart);
+
+        function toggleCart() {
+            cartDrawer.classList.toggle('translate-x-full');
+            cartOverlay.classList.toggle('hidden');
+        }
+
+        function addToCartWithQty(name, priceGHS, qtyInputId) {
+            const qty = parseInt(document.getElementById(qtyInputId)?.value) || 1;
+            const existing = cart.find(item => item.name === name);
+            if (existing) {
+                existing.qty += qty;
             } else {
-                cart.push({ name, price: exactPrice, quantity: 1 });
+                cart.push({ name, priceGHS, qty });
             }
             updateCartUI();
-        }
-
-        function addPizzaToCart(pizzaName, selectId) {
-            const selectElement = document.getElementById(selectId);
-            const selectedOption = selectElement.options[selectElement.selectedIndex];
-            const size = selectedOption.value;
-            const price = parseFloat(selectedOption.getAttribute('data-price'));
-            
-            const fullName = `${pizzaName} (${size})`;
-            addToCart(fullName, price);
-        }
-
-        function addJollofToCart(jollofName, selectId) {
-            const selectElement = document.getElementById(selectId);
-            const selectedOption = selectElement.options[selectElement.selectedIndex];
-            const size = selectedOption.value;
-            const price = parseFloat(selectedOption.getAttribute('data-price'));
-            
-            const fullName = `${jollofName} - ${size}`;
-            addToCart(fullName, price);
+            toggleCart();
         }
 
         function updateCartUI() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const cartCount = document.getElementById('cart-count');
-            const cartTotal = document.getElementById('cart-total');
+            const container = document.getElementById('cartItemsContainer');
+            const countBadge = document.getElementById('cartCount');
+            const subtotalEl = document.getElementById('cartSubtotal');
+            const bulkNotice = document.getElementById('bulkDiscountNotice');
 
-            let totalCount = 0;
-            let totalPrice = 0;
+            const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            countBadge.textContent = totalCount;
 
             if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p class="text-slate-400 text-center py-12 text-sm font-medium">Your cart is currently empty.</p>';
-            } else {
-                cartItemsContainer.innerHTML = '';
-                cart.forEach((item, index) => {
-                    totalCount += item.quantity;
-                    totalPrice += item.price * item.quantity;
-
-                    cartItemsContainer.innerHTML += `
-                        <div class="flex justify-between items-center bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm mb-0.5">${item.name}</h4>
-                                <p class="text-xs font-semibold text-red-600">$${item.price.toFixed(2)} each</p>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <button onclick="changeQuantity(${index}, -1)" class="w-8 h-8 bg-white border border-slate-200 rounded-xl font-bold text-slate-700 flex items-center justify-center hover:bg-slate-100 transition">-</button>
-                                <span class="font-bold text-sm">${item.quantity}</span>
-                                <button onclick="changeQuantity(${index}, 1)" class="w-8 h-8 bg-white border border-slate-200 rounded-xl font-bold text-slate-700 flex items-center justify-center hover:bg-slate-100 transition">+</button>
-                            </div>
-                        </div>
-                    `;
-                });
+                container.innerHTML = '<p id="emptyCartMsg" class="text-slate-400 text-center py-12 text-sm">Your cart is currently empty.</p>';
+                subtotalEl.textContent = `${currencyRates[currentCurrency].symbol}0.00`;
+                bulkNotice.classList.add('hidden');
+                return;
             }
 
-            cartCount.textContent = totalCount;
-            cartTotal.textContent = `$${totalPrice.toFixed(2)}`;
+            const { symbol, rate } = currencyRates[currentCurrency];
+            let subtotalGHS = 0;
+
+            container.innerHTML = cart.map((item, index) => {
+                const itemTotalGHS = item.priceGHS * item.qty;
+                subtotalGHS += itemTotalGHS;
+                const convertedPrice = (item.priceGHS * rate).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+                
+                return `
+                    <div class="flex justify-between items-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900">${item.name}</h4>
+                            <p class="text-xs text-slate-500 mt-1">${symbol}${convertedPrice} × ${item.qty}</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-xs text-rose-500 hover:underline uppercase tracking-wider font-bold">Remove</button>
+                    </div>
+                `;
+            }).join('');
+
+            // Apply 5% extra bulk discount if total quantity selected is greater than 3
+            let finalGHS = subtotalGHS;
+            if (totalCount > 3) {
+                finalGHS = subtotalGHS * 0.95;
+                bulkNotice.classList.remove('hidden');
+            } else {
+                bulkNotice.classList.add('hidden');
+            }
+
+            const convertedSubtotal = (finalGHS * rate).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+            subtotalEl.textContent = `${symbol}${convertedSubtotal}`;
         }
 
-        function changeQuantity(index, change) {
-            cart[index].quantity += change;
-            if (cart[index].quantity <= 0) {
-                cart.splice(index, 1);
-            }
+        function removeFromCart(index) {
+            cart.splice(index, 1);
             updateCartUI();
         }
 
         function checkoutWhatsApp() {
             if (cart.length === 0) {
-                alert('Your cart is empty!');
+                alert('Your cart is empty.');
                 return;
             }
-            let message = "Hello Slice & Spice, I am placing an order (No discounts applied):%0A";
-            let total = 0;
-            cart.forEach(item => {
-                message += `- ${item.quantity}x ${item.name} at $${item.price.toFixed(2)} = $${(item.price * item.quantity).toFixed(2)}%0A`;
-                total += item.price * item.quantity;
-            });
-            message += `%0ATotal Amount Payable: $${total.toFixed(2)}`;
+            const { symbol, rate } = currencyRates[currentCurrency];
+            let subtotalGHS = 0;
+            let totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
 
-            const whatsappUrl = `https://wa.me/233539847422?text=${message}`;
-            window.open(whatsappUrl, '_blank');
-        }
+            let itemList = cart.map(item => {
+                subtotalGHS += (item.priceGHS * item.qty);
+                return `- ${item.name} (Qty: ${item.qty}) - ${symbol}${(item.priceGHS * rate * item.qty).toFixed(0)}`;
+            }).join('\n');
 
-        function bookAppointment(e) {
-            e.preventDefault();
-            const name = document.getElementById('book-name').value;
-            const phone = document.getElementById('book-phone').value;
-            const date = document.getElementById('book-date').value;
-            const time = document.getElementById('book-time').value;
-            const notes = document.getElementById('book-notes').value;
+            let finalGHS = subtotalGHS;
+            let discountNote = "";
+            if (totalCount > 3) {
+                finalGHS = subtotalGHS * 0.95;
+                discountNote = "\n✨ *5% Bulk Discount Applied!*";
+            }
 
-            const message = `Hello Slice & Spice, I would like to book a table:%0A` +
-                            `- Name: ${name}%0A` +
-                            `- Phone: ${phone}%0A` +
-                            `- Date: ${date}%0A` +
-                            `- Time: ${time}%0A` +
-                            `- Notes: ${notes}`;
-
-            const whatsappUrl = `https://wa.me/233539847422?text=${message}`;
-            window.open(whatsappUrl, '_blank');
+            const convertedSubtotal = (finalGHS * rate).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+            const message = encodeURIComponent(`Hello XTONAFAN KLODIN, I want to checkout with the following items from my cart:\n\n${itemList}${discountNote}\n\n*Total Subtotal:* ${symbol}${convertedSubtotal}\n\nPlease assist with order finalization.`);
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
         }
     </script>
 </body>
