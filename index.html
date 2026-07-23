@@ -455,12 +455,12 @@
         function orderNowWhatsApp(name, priceUSD) {
             const { symbol, rate } = currencyRates[currentCurrency];
             const convertedPrice = (priceUSD * rate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-            const message = encodeURIComponent(`Hello XTONAFAN, I would like to place an immediate order for:\n\n*Product:* ${name}\n*Price:* ${symbol}${convertedPrice}\n\nPlease guide me through payment and fulfillment.`);
+            const message = encodeURIComponent(`Hello, I would like to place an immediate order for:\n\n*Product:* ${name}\n*Price:* ${symbol}${convertedPrice}\n\nPlease guide me through payment and fulfillment.`);
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
         }
 
         function bookAppointmentWhatsApp(name) {
-            const message = encodeURIComponent(`Hello XTONAFAN, I would like to book an appointment for fitting:\n\n*Product:* ${name}\n\nPlease let me know your available slots.`);
+            const message = encodeURIComponent(`Hello, I would like to book an appointment for fitting:\n\n*Product:* ${name}\n\nPlease let me know your available slots.`);
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
         }
 
@@ -477,7 +477,7 @@
             }).join('\n');
 
             const convertedSubtotal = (subtotalUSD * rate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-            const message = encodeURIComponent(`Hello XTONAFA, I want to checkout with the following items from my cart:\n\n${itemList}\n\n*Subtotal:* ${symbol}${convertedSubtotal}\n\nPlease assist with order finalization.`);
+            const message = encodeURIComponent(`Hello, I want to checkout with the following items from my cart:\n\n${itemList}\n\n*Subtotal:* ${symbol}${convertedSubtotal}\n\nPlease assist with order finalization.`);
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
         }
     </script>
